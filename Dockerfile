@@ -12,7 +12,7 @@ RUN echo '' > /etc/apt/sources.list \
     && echo "deb http://mirrors.aliyun.com/debian stretch-updates main contrib non-free" >> /etc/apt/sources.list \
     && apt-get update -y \
     && apt-get install -y sudo \
-    && apt-get install -y libltdl7 \
+    && apt-get install -y libltdl7  python3-pip\
     && rm -rf /var/lib/apt/lists/* \
     && echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers \
     && echo "docker:x:${docker_gid}:jenkins" >> /etc/group \
