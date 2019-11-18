@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins:latest
 
 LABEL maintainer="xuchao@gen-iot.com" 
 
@@ -6,7 +6,8 @@ USER root
 
 ARG docker_gid=999
 
-RUN echo '' > /etc/apt/sources.list \
+RUN  echo 'Asia/Shanghai'> /etc/timezone \
+    && echo '' > /etc/apt/sources.list \
     && echo "deb http://mirrors.aliyun.com/debian stretch main contrib non-free" > /etc/apt/sources.list \
     && echo "deb http://mirrors.aliyun.com/debian stretch-proposed-updates main contrib non-free" >> /etc/apt/sources.list \
     && echo "deb http://mirrors.aliyun.com/debian stretch-updates main contrib non-free" >> /etc/apt/sources.list \
